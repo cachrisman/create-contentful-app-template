@@ -1,16 +1,9 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { AppExtensionSDK } from '@contentful/app-sdk';
 import { Heading, Form, Workbench, Paragraph } from '@contentful/forma-36-react-components';
 import { css } from 'emotion';
 
-export interface AppInstallationParameters {}
-
-interface ConfigProps {
-  sdk: AppExtensionSDK;
-}
-
-const Config = (props: ConfigProps) => {
-  const [parameters, setParameters] = useState<AppInstallationParameters>({});
+const Config = (props) => {
+  const [parameters, setParameters] = useState({});
 
   const onConfigure = useCallback(async () => {
     // This method will be called when a user clicks on "Install"
@@ -41,7 +34,7 @@ const Config = (props: ConfigProps) => {
     (async () => {
       // Get current parameters of the app.
       // If the app is not installed yet, `parameters` will be `null`.
-      const currentParameters: AppInstallationParameters | null = await props.sdk.app.getParameters();
+      const currentParameters = await props.sdk.app.getParameters();
 
       if (currentParameters) {
         setParameters(currentParameters);

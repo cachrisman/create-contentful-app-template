@@ -2,12 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import {
-  AppExtensionSDK,
-  FieldExtensionSDK,
-  SidebarExtensionSDK,
-  DialogExtensionSDK,
-  EditorExtensionSDK,
-  PageExtensionSDK,
   init,
   locations,
 } from '@contentful/app-sdk';
@@ -39,27 +33,27 @@ if (process.env.NODE_ENV === 'development' && window.self === window.top) {
     const ComponentLocationSettings = [
       {
         location: locations.LOCATION_APP_CONFIG,
-        component: <Config sdk={sdk as AppExtensionSDK} />,
+        component: <Config sdk={sdk} />,
       },
       {
         location: locations.LOCATION_ENTRY_FIELD,
-        component: <Field sdk={sdk as FieldExtensionSDK} />,
+        component: <Field sdk={sdk} />,
       },
       {
         location: locations.LOCATION_ENTRY_EDITOR,
-        component: <EntryEditor sdk={sdk as EditorExtensionSDK} />,
+        component: <EntryEditor sdk={sdk} />,
       },
       {
         location: locations.LOCATION_DIALOG,
-        component: <Dialog sdk={sdk as DialogExtensionSDK} />,
+        component: <Dialog sdk={sdk} />,
       },
       {
         location: locations.LOCATION_ENTRY_SIDEBAR,
-        component: <Sidebar sdk={sdk as SidebarExtensionSDK} />,
+        component: <Sidebar sdk={sdk} />,
       },
       {
         location: locations.LOCATION_PAGE,
-        component: <Page sdk={sdk as PageExtensionSDK} />,
+        component: <Page sdk={sdk} />,
       },
     ];
 

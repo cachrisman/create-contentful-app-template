@@ -1,12 +1,7 @@
 import React from 'react';
 import { Paragraph } from '@contentful/forma-36-react-components';
-import { SidebarExtensionSDK } from '@contentful/app-sdk';
 
-interface SidebarProps {
-  sdk: SidebarExtensionSDK;
-}
-
-const Sidebar = (props: SidebarProps) => {
+const Sidebar = (props) => {
   return <Paragraph>Hello Sidebar Component</Paragraph>;
 };
 
